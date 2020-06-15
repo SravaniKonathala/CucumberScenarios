@@ -43,9 +43,9 @@ public class ScenarioStepDef {
 	public void i_enter_the_username_and_password() throws Exception {
 		Thread.sleep(4000);
 	    WebElement emailId = driver.findElement(By.id("ap_email"));
-		emailId.sendKeys("srinu.portal@gmail.com");
+		emailId.sendKeys("user_emailId@gmail.com");
 	    driver.findElement(By.id("continue")).click();
-	    driver.findElement(By.name("password")).sendKeys("Nagu4Rathnam");
+	    driver.findElement(By.name("password")).sendKeys("user_password");
 	}
 
 	@When("I click on Login")
@@ -60,7 +60,7 @@ public class ScenarioStepDef {
 	public void i_validate_the_message(String successMsg) {
 	    WebElement message = driver.findElement(By.xpath("<xpath of the message>"));
 	    String actualMsg = message.getText();
-	    String expectedMsg = "Hello, Name";
+	    String expectedMsg = "Hello, user_name";
 	    Assert.assertEquals(expectedMsg, actualMsg);
 	    System.out.println(successMsg);
 	    
